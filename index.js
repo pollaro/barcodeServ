@@ -35,21 +35,20 @@ const Product = sequelize.define('Product', {
 })
 
 app.get('/upc', async (req, res) => {
-	console.log(req.params)
 	try {
-		res = await Product.findOne({
-			createdAt: null,
-			updatedAt: null,
+		var out = await Product.findOne({
+			attributes: ['upc'],
 			where: {
 				upc: {
-					[op.eq]: req.params.upc
+					[op.eq]: req.query.upc
 				}
 			}
 		})
-		if (res) {
-			res.send(true)
+		console.log(out)
+		if (out) {
+			res.json({ found: true })
 		} else {
-			res.send(false)
+			res.json({ found: false })
 		}
 	} catch (err) {
 		console.log(err)
