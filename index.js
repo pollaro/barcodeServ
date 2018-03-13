@@ -44,7 +44,6 @@ app.get('/upc', async (req, res) => {
 				}
 			}
 		})
-		console.log(out)
 		if (out) {
 			res.json({ found: true })
 		} else {
