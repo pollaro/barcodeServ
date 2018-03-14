@@ -41,7 +41,7 @@ app.get('/upc', async (req, res) => {
 			attributes: ['upc'],
 			where: {
 				upc: {
-					[op.eq]: parseInt(req.query.upc)
+					[op.eq]: req.query.upc
 				}
 			}
 		})
