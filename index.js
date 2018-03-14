@@ -4,6 +4,7 @@ var sqlite3 = require('sqlite3').verbose()
 var app = express()
 var bodyparser = require('body-parser')
 var op = Sequelize.Op
+require('dotenv').config()
 
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
@@ -53,6 +54,8 @@ app.get('/upc', async (req, res) => {
 		console.log(err)
 	}
 })
+
+// module.exports = app
 
 app.listen(8080, () => {
 	console.log('Server running on port 8080')

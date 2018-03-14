@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "barcodeserv-executor",
+    "name": "barcodeserv",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "hq7eytd16j"
+  }
+}
